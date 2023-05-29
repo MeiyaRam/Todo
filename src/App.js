@@ -1,9 +1,15 @@
 import { React } from 'react';
 import './App.scss';
+import Input from './components/Input';
+import AddButton from './components/AddButton';
+import Todo from './components/Todo';
 
-const App = () =>
+const App = (context) =>
 	<div className="App">
-		Ready to start.
+		ToDo App
+		<Input { ...context }/>
+		<AddButton { ...context }/>
+		<Todo { ...context }/>
 	</div>;
 
 export default App;
