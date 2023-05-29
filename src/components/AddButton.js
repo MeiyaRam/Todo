@@ -1,11 +1,11 @@
 import { React } from 'react';
 const AddButton = (context) => {
-	const { actions, state } = context;
+	const { actions } = context;
 
 	return (
 		<div>
 			<button onClick={ () =>
-				actions.addTodo(state) }
+				actions.addTodo() }
 			>
 				Add
 			</button>

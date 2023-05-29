@@ -6,7 +6,7 @@ const Todo = (context) => {
 	return (
 		todos.map((todo, i) =>
 			<div key={ i }>
-				{todo}
+				{todo.todo}
 			</div>)
 	);
 };
