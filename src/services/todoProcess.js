@@ -8,6 +8,12 @@ const getToDo = (context) => {
 	return [...todos, { id: rndString(idLength), todo: todo }];
 };
 
-const todoProcess = { getToDo };
+const removeTodo = (context) => {
+	const { data, state: { todos }} = context;
+
+	return todos.filter((search) => search.id !== data);
+};
+
+const todoProcess = { getToDo, removeTodo };
 
 export default todoProcess;

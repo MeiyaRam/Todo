@@ -8,6 +8,10 @@ const actions = {
 		todo: context.seed.todo,
 	}),
 
+	removeTodo: (context) => ({
+		todos: todoProcess.removeTodo(context),
+	}),
+
 };
 
 export default actions;
