@@ -1,10 +1,10 @@
 import todoProcess from '../services/todoProcess';
 
 const actions = {
-	updateTodo: (context) => ({ todo: context.data }),
+	setTodo: (context) => ({ todo: context.data }),
 
-	addTodo: (context) => ({
-		todos: todoProcess.getToDo(context),
+	setAddTodo: (context) => ({
+		todos: todoProcess.getAddedTodo(context),
 		todo: context.seed.todo,
 	}),
 
@@ -13,7 +13,7 @@ const actions = {
 	}),
 
 	setCompleted: (context) => ({
-		todos: todoProcess.isCompleteToDo(context),
+		todos: todoProcess.isCompleteTodo(context),
 	}),
 
 };

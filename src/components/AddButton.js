@@ -5,7 +5,7 @@ const AddButton = (context) => {
 	return (
 		<div>
 			<button onClick={ () =>
-				actions.addTodo() }
+				actions.setAddTodo() }
 			>
 				Add
 			</button>

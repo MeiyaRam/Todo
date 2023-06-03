@@ -2,12 +2,12 @@ import { rndString } from '@laufire/utils/random';
 
 const idLength = 3;
 
-const getToDo = (context) => {
+const getAddedTodo = (context) => {
 	const { state: { todo, todos }} = context;
 
 	return todo !== ''
 		? [...todos,
-			{ id: rndString(idLength), todo: todo, isCompleted: false }]
+			{ id: rndString(idLength), todo: todo, completedTodo: false }]
 		: todos;
 };
 
@@ -17,14 +17,14 @@ const removeTodo = (context) => {
 	return todos.filter((search) => search.id !== data);
 };
 
-const isCompleteToDo = (context) => {
+const isCompleteTodo = (context) => {
 	const { data: { data }, state: { todos }} = context;
 
 	return todos.map((todo) => (todo.id === data.id
-		? { ...todo, isCompleted: !todo.isCompleted }
+		? { ...todo, completedTodo: !todo.completedTodo }
 		: todo));
 };
 
-const todoProcess = { getToDo, removeTodo, isCompleteToDo };
+const todoProcess = { getAddedTodo, removeTodo, isCompleteTodo };
 
 export default todoProcess;

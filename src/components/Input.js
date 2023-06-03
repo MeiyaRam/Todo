@@ -8,7 +8,7 @@ const Input = (context) => {
 			<input
 				type="text"
 				value={ todo }
-				onChange={ (e) => actions.updateTodo(e.target.value) }
+				onChange={ (e) => actions.setTodo(e.target.value) }
 			/>
 		</div>
 
