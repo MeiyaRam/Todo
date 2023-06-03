@@ -5,7 +5,10 @@ const idLength = 3;
 const getToDo = (context) => {
 	const { state: { todo, todos }} = context;
 
-	return [...todos, { id: rndString(idLength), todo: todo }];
+	return todo !== ''
+		? [...todos,
+			{ id: rndString(idLength), todo: todo, isCompleted: false }]
+		: todos;
 };
 
 const removeTodo = (context) => {
@@ -14,6 +17,14 @@ const removeTodo = (context) => {
 	return todos.filter((search) => search.id !== data);
 };
 
-const todoProcess = { getToDo, removeTodo };
+const isCompleteToDo = (context) => {
+	const { data: { data }, state: { todos }} = context;
+
+	return todos.map((todo) => (todo.id === data.id
+		? { ...todo, isCompleted: !todo.isCompleted }
+		: todo));
+};
+
+const todoProcess = { getToDo, removeTodo, isCompleteToDo };
 
 export default todoProcess;

@@ -12,6 +12,10 @@ const actions = {
 		todos: todoProcess.removeTodo(context),
 	}),
 
+	setCompleted: (context) => ({
+		todos: todoProcess.isCompleteToDo(context),
+	}),
+
 };
 
 export default actions;
