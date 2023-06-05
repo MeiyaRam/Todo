@@ -4,16 +4,16 @@ const actions = {
 	setTodo: (context) => ({ todo: context.data }),
 
 	setAddTodo: (context) => ({
-		todos: todoProcess.getAddedTodo(context),
+		todos: todoProcess.getListTodo(context),
 		todo: context.seed.todo,
 	}),
 
-	removeTodo: (context) => ({
-		todos: todoProcess.removeTodo(context),
+	setRemoveTodo: (context) => ({
+		todos: todoProcess.getRemoveTodo(context),
 	}),
 
-	setCompleted: (context) => ({
-		todos: todoProcess.isCompleteTodo(context),
+	setToggle: (context) => ({
+		todos: todoProcess.getToggleTodo(context),
 	}),
 
 };

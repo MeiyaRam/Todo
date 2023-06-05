@@ -1,12 +1,12 @@
 import { React } from 'react';
 
 const CheckBoxDisplay = (context) => {
-	const { actions } = context;
+	const { actions, data } = context;
 
 	return (
 		<input
 			type="checkBox"
-			onClick={ () => actions.setCompleted(context) }
+			onClick={ () => actions.setToggle(data) }
 		/>
 	);
 };
@@ -24,7 +24,7 @@ const Todo = (context) => {
 						<td>{ todo.todo}</td>
 						<td>
 							<button
-								onClick={ () => actions.removeTodo(todo.id) }
+								onClick={ () => actions.setRemoveTodo(todo.id) }
 							>X
 							</button></td>
 					</tr>)}
