@@ -4,20 +4,24 @@ const idLength = 3;
 
 const todoProcess = {
 
-	getListTodo: ({ state: { todo, todos }}) => [
-		...todos,
-		todo !== ''
-		&&	{ id: rndString(idLength),
-			todo: todo, completedTodo: false },
-	],
+	getListTodo: ({ state: { todo, todos }}) => [todo !== ''
+		? [...todos,
+			{ id: rndString(idLength), todo: todo, completedTodo: false }]
+		: todos],
 
 	getRemoveTodo: ({ data, state: { todos }}) =>
 		todos.filter((search) => search.id !== data),
 
 	getToggleTodo: ({ data, state: { todos }}) =>
 		todos.map((todo) => (todo.id === data.id
-			? { ...todo, completedTodo: !todo.completedTodo }
+			? { ...todo, isCompleted: !todo.isCompleted }
 			: todo)),
+
+	getToggleAll: ({ data, state: { todos }}) =>
+		todos.map((todo) => ({
+			...todo,
+			isCompleted: data,
+		})),
 
 };
 

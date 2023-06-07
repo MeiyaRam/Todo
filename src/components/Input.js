@@ -1,10 +1,12 @@
 import { React } from 'react';
+import ToggleAll from './ToggleAll';
 
 const Input = (context) => {
 	const { state: { todo }, actions } = context;
 
 	return (
 		<div>
+			<ToggleAll { ...context }/>
 			<input
 				type="text"
 				value={ todo }

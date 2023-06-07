@@ -16,6 +16,11 @@ const actions = {
 		todos: todoProcess.getToggleTodo(context),
 	}),
 
+	setToggleAll: (context) => ({
+		todos: todoProcess.getToggleAll(context),
+		toggleAll: context.data,
+	}),
+
 };
 
 export default actions;

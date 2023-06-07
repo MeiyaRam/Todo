@@ -1,6 +1,7 @@
 const seed = {
 	todo: '',
 	todos: [],
+	toggleAll: false,
 
 };
 
