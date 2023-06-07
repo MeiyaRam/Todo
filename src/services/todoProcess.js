@@ -4,10 +4,10 @@ const idLength = 3;
 
 const todoProcess = {
 
-	getListTodo: ({ state: { todo, todos }}) => [todo !== ''
+	getListTodo: ({ state: { todo, todos }}) => (todo !== ''
 		? [...todos,
-			{ id: rndString(idLength), todo: todo, completedTodo: false }]
-		: todos],
+			{ id: rndString(idLength), todo: todo, isCompleted: false }]
+		: todos),
 
 	getRemoveTodo: ({ data, state: { todos }}) =>
 		todos.filter((search) => search.id !== data),
