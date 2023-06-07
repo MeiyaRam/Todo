@@ -21,6 +21,10 @@ const actions = {
 		toggleAll: context.data,
 	}),
 
+	setFilter: (context) => ({
+		filterButtonName: context.data,
+	}),
+
 };
 
 export default actions;
