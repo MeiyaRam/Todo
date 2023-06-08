@@ -1,4 +1,5 @@
 import { React } from 'react';
+import todoProcess from '../services/todoProcess';
 
 const CheckBoxDisplay = (context) => {
 	const { actions, data } = context;
@@ -14,12 +15,13 @@ const CheckBoxDisplay = (context) => {
 };
 
 const Todo = (context) => {
-	const { actions, state: { todos }} = context;
+	const { actions } = context;
+	const filters = todoProcess.getFilteredResult(context);
 
 	return (
 		<table style={ { marginLeft: '47%', align: 'center' } }>
 			<tbody>
-				{todos.map((todo, i) =>
+				{filters.map((todo, i) =>
 					<tr key={ i }>
 						<td><CheckBoxDisplay { ...{ ...context, data: todo } }/>
 						</td>

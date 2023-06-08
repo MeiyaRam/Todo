@@ -23,6 +23,13 @@ const todoProcess = {
 			isCompleted: data,
 		})),
 
+	getFilteredResult: ({ state: { todos, filter }}) =>
+		(filter === 'Active'
+			? todos.filter((find) => find.isCompleted === false)
+			: filter === 'Completed'
+				? todos.filter((find) => find.isCompleted === true)
+				: todos),
+
 };
 
 export default todoProcess;

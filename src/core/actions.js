@@ -22,7 +22,7 @@ const actions = {
 	}),
 
 	setFilter: (context) => ({
-		filterButtonName: context.data,
+		filter: context.data,
 	}),
 
 };

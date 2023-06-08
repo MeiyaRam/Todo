@@ -2,7 +2,7 @@ const seed = {
 	todo: '',
 	todos: [],
 	toggleAll: false,
-	filterButtonName: '',
+	filter: '',
 };
 
 export default seed;
