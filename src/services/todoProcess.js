@@ -31,6 +31,9 @@ const todoProcess = {
 	getFilteredResult: ({ state: { todos, filter }}) =>
 		todos.filter(filters[filter]),
 
+	getClearedTodo: ({ state: { todos }}) =>
+		todos.filter((todo) => todo.isCompleted !== true),
+
 };
 
 export default todoProcess;

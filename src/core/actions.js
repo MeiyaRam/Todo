@@ -25,6 +25,10 @@ const actions = {
 		filter: context.data,
 	}),
 
+	setClearCompleted: (context) => ({
+		todos: todoProcess.getClearedTodo(context),
+	}),
+
 };
 
 export default actions;
