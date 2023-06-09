@@ -1,5 +1,10 @@
 import { rndString } from '@laufire/utils/random';
 
+const filters = {
+	All: (todo) => todo,
+	Active: (todo) => todo.isCompleted === false,
+	Completed: (todo) => todo.isCompleted === true,
+};
 const idLength = 3;
 
 const todoProcess = {
@@ -24,11 +29,7 @@ const todoProcess = {
 		})),
 
 	getFilteredResult: ({ state: { todos, filter }}) =>
-		(filter === 'Active'
-			? todos.filter((find) => find.isCompleted === false)
-			: filter === 'Completed'
-				? todos.filter((find) => find.isCompleted === true)
-				: todos),
+		todos.filter(filters[filter]),
 
 };
 
