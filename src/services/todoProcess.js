@@ -34,6 +34,9 @@ const todoProcess = {
 	getClearedTodo: ({ state: { todos }}) =>
 		todos.filter((todo) => todo.isCompleted !== true),
 
+	hasCompleted: ({ state: { todos }}) =>
+		todos.filter(filters.Completed).length === 0,
+
 };
 
 export default todoProcess;
