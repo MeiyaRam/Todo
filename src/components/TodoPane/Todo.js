@@ -1,29 +1,18 @@
 import { React } from 'react';
-
-const CheckBoxDisplay = (context) => {
-	const { actions, data } = context;
-	const { isCompleted } = data;
-
-	return (
-		<input
-			type="checkBox"
-			checked={ isCompleted }
-			onChange={ () => actions.setToggle(data) }
-		/>
-	);
-};
+import CheckBox from './CheckBox';
 
 const Todo = (context) => {
-	const { data: { todo, id }, actions } = context;
+	const { data, actions } = context;
+	const { id, todo } = data;
 
 	return (
 		<tr key={ id }>
-			<td><CheckBoxDisplay { ...{ ...context, data: todo } }/>
+			<td><CheckBox { ...{ ...context, data: context } }/>
 			</td>
 			<td>{ todo}</td>
 			<td>
 				<button
-					onClick={ () => actions.setRemoveTodo(todo.id) }
+					onClick={ () => actions.setRemoveTodo(id) }
 				>X
 				</button></td></tr>
 
