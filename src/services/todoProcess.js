@@ -37,6 +37,9 @@ const todoProcess = {
 	hasCompleted: ({ state: { todos }}) =>
 		todos.filter(filters.Completed).length === 0,
 
+	hasNoTodos: ({ state: { todos }}) =>
+		todos.filter(filters.All).length === 0,
+
 };
 
 export default todoProcess;
