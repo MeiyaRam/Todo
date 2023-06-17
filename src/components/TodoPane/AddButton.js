@@ -3,13 +3,13 @@ const AddButton = (context) => {
 	const { actions } = context;
 
 	return (
-		<div>
-			<button onClick={ () =>
+		<button
+			style={ { margin: '12px' } }
+			onClick={ () =>
 				actions.setAddTodo() }
-			>
-				Add
-			</button>
-		</div>
+		>
+			Add
+		</button>
 	);
 };
 
