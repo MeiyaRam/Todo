@@ -1,24 +1,19 @@
 import { React } from 'react';
-import ClearCompleted from './ClearCompleted';
+import FilterButtons from './FilterButtons';
 
 const FilterBar = (context) => {
-	const { actions, config: { filterButtons }} = context;
+	const { config: { filterButtons }} = context;
 
 	return (
-		<table style={ { marginLeft: '47%', align: 'center' } }>
-			<tbody><tr>
-				{filterButtons.map((button, key) =>
-					<td key={ key }>
-						<button
-							value={ button }
-							onClick={ (e) =>
-								actions.setFilter(e.target.value) }
-						>
-							{button}
-						</button>
-					</td>)}
-				<td><ClearCompleted { ...context }/></td>
-			</tr>
+		<table style={ { marginLeft: '45%', align: 'center' } }>
+			<tbody>
+				<tr>
+					{filterButtons.map((button, key) =>
+						<FilterButtons
+							key={ key }
+							{ ...{ ...context, data: button } }
+						/>)}
+				</tr>
 			</tbody>
 		</table>);
 };
