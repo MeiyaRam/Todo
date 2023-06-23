@@ -1,7 +1,10 @@
 import { React } from 'react';
+import todoProcess from '../../services/todoProcess';
 
 const ToggleAll = (context) => {
-	const { actions, state: { toggleAll }} = context;
+	const { actions } = context;
+
+	const toggleAll = todoProcess.hasActiveTodo(context);
 
 	return (
 		<input
