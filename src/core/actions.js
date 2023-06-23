@@ -18,7 +18,6 @@ const actions = {
 
 	setToggleAll: (context) => ({
 		todos: todoProcess.getToggleAll(context),
-		toggleAll: context.data,
 	}),
 
 	setFilter: (context) => ({
