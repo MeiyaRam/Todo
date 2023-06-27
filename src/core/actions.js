@@ -1,23 +1,23 @@
-import todoProcess from '../services/todoProcess';
+import todoManager from '../services/todoManager';
 
 const actions = {
 	setTodo: (context) => ({ todo: context.data }),
 
 	setAddTodo: (context) => ({
-		todos: todoProcess.getListTodo(context),
+		todos: todoManager.getListTodo(context),
 		todo: context.seed.todo,
 	}),
 
 	setRemoveTodo: (context) => ({
-		todos: todoProcess.getRemoveTodo(context),
+		todos: todoManager.getRemoveTodo(context),
 	}),
 
 	setToggle: (context) => ({
-		todos: todoProcess.getToggleTodo(context),
+		todos: todoManager.getToggleTodo(context),
 	}),
 
 	setToggleAll: (context) => ({
-		todos: todoProcess.getToggleAll(context),
+		todos: todoManager.getToggleAll(context),
 	}),
 
 	setFilter: (context) => ({
@@ -25,7 +25,7 @@ const actions = {
 	}),
 
 	setClearCompleted: (context) => ({
-		todos: todoProcess.getClearedTodo(context),
+		todos: todoManager.getClearedTodo(context),
 	}),
 
 	setEditTodo: (context) => ({
@@ -34,7 +34,7 @@ const actions = {
 	}),
 
 	setUpdateTodo: (context) => ({
-		todos: todoProcess.getEditListTodo(context),
+		todos: todoManager.getEditListTodo(context),
 		todo: context.seed.todo,
 		editTodo: context.seed.editTodo,
 	}),

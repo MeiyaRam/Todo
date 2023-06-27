@@ -1,9 +1,9 @@
 import { React } from 'react';
-import todoProcess from '../../services/todoProcess';
+import todoManager from '../../services/todoManager';
 import Todo from './Todo';
 
 const Todos = (context) => {
-	const filters = todoProcess.getFilteredResult(context);
+	const filters = todoManager.getFilteredResult(context);
 
 	return (
 		<table style={ { marginLeft: '47%', align: 'center' } }>

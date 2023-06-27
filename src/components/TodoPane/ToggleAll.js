@@ -1,10 +1,10 @@
 import { React } from 'react';
-import todoProcess from '../../services/todoProcess';
+import todoManager from '../../services/todoManager';
 
 const ToggleAll = (context) => {
 	const { actions } = context;
 
-	const toggleAll = todoProcess.hasActiveTodo(context);
+	const toggleAll = todoManager.hasActiveTodo(context);
 
 	return (
 		<input

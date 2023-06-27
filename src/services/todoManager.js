@@ -7,7 +7,7 @@ const filters = {
 };
 const idLength = 3;
 
-const todoProcess = {
+const todoManager = {
 
 	getListTodo: ({ state: { todo, todos }}) => (todo !== ''
 		? [...todos,
@@ -51,4 +51,4 @@ const todoProcess = {
 
 };
 
-export default todoProcess;
+export default todoManager;

@@ -1,9 +1,9 @@
 import { React } from 'react';
-import todoProcess from '../../services/todoProcess';
+import todoManager from '../../services/todoManager';
 
 const ClearCompleted = (context) => {
 	const { actions } = context;
-	const hasComplete = todoProcess.hasCompleted(context);
+	const hasComplete = todoManager.hasCompleted(context);
 
 	return (
 		<div>
