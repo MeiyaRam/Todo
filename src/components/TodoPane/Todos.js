@@ -3,13 +3,16 @@ import todoManager from '../../services/todoManager';
 import Todo from './Todo';
 
 const Todos = (context) => {
-	const filters = todoManager.getFilteredResult(context);
+	const filteredTodo = todoManager.getFilteredTodo(context);
 
 	return (
-		<table style={ { marginLeft: '47%', align: 'center' } }>
+		<table className="table">
 			<tbody>
-				{filters.map((todo) =>
-					Todo({ ...context, data: todo }))}
+				{filteredTodo.map((todo, key) =>
+					<Todo
+						key={ key }
+						{ ...{ ...context, data: todo } }
+					/>)}
 			</tbody>
 		</table>
 	);

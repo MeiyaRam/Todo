@@ -28,7 +28,7 @@ const todoManager = {
 			isCompleted: data,
 		})),
 
-	getFilteredResult: ({ state: { todos, filter }}) =>
+	getFilteredTodo: ({ state: { todos, filter }}) =>
 		todos.filter(filters[filter]),
 
 	getClearedTodo: ({ state: { todos }}) =>
@@ -44,10 +44,10 @@ const todoManager = {
 		todos.filter(filters.Active).length === 0,
 
 	getEditListTodo: ({ state }) =>
-		state.todos.map((todoList) =>
-			(todoList.id === state.editTodo.id
-				? { ...todoList, todo: state.todo }
-				: todoList)),
+		state.todos.map((todo) =>
+			(todo.id === state.editTodo.id
+				? { ...todo, todo: state.todo }
+				: todo)),
 
 };
 
