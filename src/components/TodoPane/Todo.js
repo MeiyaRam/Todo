@@ -7,9 +7,9 @@ const Todo = (context) => {
 
 	return (
 		<tr key={ id }>
-			<td><CheckBox { ...{ ...context, data: context } }/>
+			<td><CheckBox { ...{ ...context } }/>
 			</td>
-			<td>{ todo}</td>
+			<td onClick={ () => actions.setEditTodo(data) }>{todo}</td>
 			<td>
 				<button
 					onClick={ () => actions.setRemoveTodo(id) }

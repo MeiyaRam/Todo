@@ -15,7 +15,7 @@ const todoProcess = {
 		: todos),
 
 	getRemoveTodo: ({ data, state: { todos }}) =>
-		todos.filter((search) => search.id !== data),
+		todos.filter((todo) => todo.id !== data),
 
 	getToggleTodo: ({ data, state: { todos }}) =>
 		todos.map((todo) => (todo.id === data.id
@@ -42,6 +42,12 @@ const todoProcess = {
 
 	hasActiveTodo: ({ state: { todos }}) =>
 		todos.filter(filters.Active).length === 0,
+
+	getEditListTodo: ({ state }) =>
+		state.todos.map((todoList) =>
+			(todoList.id === state.editTodo.id
+				? { ...todoList, todo: state.todo }
+				: todoList)),
 
 };
 

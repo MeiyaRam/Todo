@@ -1,7 +1,7 @@
 import { React } from 'react';
 
 const CheckBox = (context) => {
-	const { actions, data: { data }} = context;
+	const { actions, data } = context;
 	const { isCompleted } = data;
 
 	return (

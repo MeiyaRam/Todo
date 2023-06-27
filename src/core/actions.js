@@ -28,6 +28,17 @@ const actions = {
 		todos: todoProcess.getClearedTodo(context),
 	}),
 
+	setEditTodo: (context) => ({
+		editTodo: context.data,
+		todo: context.data.todo,
+	}),
+
+	setUpdateTodo: (context) => ({
+		todos: todoProcess.getEditListTodo(context),
+		todo: context.seed.todo,
+		editTodo: context.seed.editTodo,
+	}),
+
 };
 
 export default actions;
