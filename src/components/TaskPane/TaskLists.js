@@ -11,6 +11,10 @@ const TaskLists = (context) => {
 	return <div>
 		{tasks.map((task, key) =>
 			<p key={ key }>
+				<button
+					style={ { margin: '3px' } }
+					onClick={ () => actions.setAddTask(task.task) }
+				>+</button>
 				{task.task}
 				<button
 					style={ { margin: '3px' } }

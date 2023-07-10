@@ -8,10 +8,10 @@ const filters = {
 
 const todoManager = {
 
-	getListTodo: ({ state: { todo, todos },
-		config: { idLength }}) => (todo !== ''
+	getListTodo: ({ data, state: { todos },
+		config: { idLength }}) => (data !== ''
 		? [...todos,
-			{ id: rndString(idLength), todo: todo, isCompleted: false }]
+			{ id: rndString(idLength), todo: data, isCompleted: false }]
 		: todos),
 
 	getRemoveTodo: ({ data, state: { todos }}) =>

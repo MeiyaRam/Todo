@@ -5,7 +5,8 @@ const actions = {
 	setTodo: (context) => ({ todo: context.data }),
 
 	setAddTodo: (context) => ({
-		todos: todoManager.getListTodo(context),
+		todos:
+		todoManager.getListTodo({ ...context, data: context.state.todo }),
 		todo: context.seed.todo,
 	}),
 
@@ -46,6 +47,10 @@ const actions = {
 
 	setRemoveTask: (context) => ({
 		tasks: taskManager.removeTask(context),
+	}),
+
+	setAddTask: (context) => ({
+		todos: todoManager.getListTodo(context),
 	}),
 
 };
