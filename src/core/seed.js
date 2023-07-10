@@ -3,6 +3,7 @@ const seed = {
 	todos: [],
 	filter: 'All',
 	editTodo: '',
+	tasks: [],
 };
 
 export default seed;

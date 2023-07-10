@@ -5,6 +5,7 @@ import FilterBar from './FilterBar';
 import ClearCompleted from './ClearCompleted';
 
 const TodoPane = (context) => <div>
+	ToDo App
 	<Input { ...context }/>
 	<FilterBar { ...context }/>
 	<Todos { ...context }/>

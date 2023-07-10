@@ -1,3 +1,4 @@
+import taskManager from '../services/taskManager';
 import todoManager from '../services/todoManager';
 
 const actions = {
@@ -37,6 +38,10 @@ const actions = {
 		todos: todoManager.getEditListTodo(context),
 		todo: context.seed.todo,
 		editTodo: context.seed.editTodo,
+	}),
+
+	setTasks: (context) => ({
+		tasks: taskManager.getTasks(context),
 	}),
 
 };

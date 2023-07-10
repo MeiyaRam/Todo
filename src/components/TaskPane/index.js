@@ -1,9 +1,10 @@
 import React from 'react';
-import RandomString from './RandomString';
+import TaskLists from './TaskLists';
 
 const TaskPane = (context) =>
 	<div>
-		<RandomString { ...context }/>
+		TaskPane
+		<TaskLists { ...context }/>
 	</div>;
 
 export default TaskPane;
