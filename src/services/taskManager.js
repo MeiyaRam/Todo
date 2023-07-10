@@ -11,6 +11,9 @@ const taskManager = {
 					isCompleted: false,
 				}]
 			:	[...tasks]),
+
+	removeTask: ({ data, state: { tasks }}) =>
+		tasks.filter((task) => task.id !== data),
 };
 
 export default taskManager;

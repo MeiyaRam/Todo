@@ -5,11 +5,11 @@ const filters = {
 	Active: (todo) => todo.isCompleted === false,
 	Completed: (todo) => todo.isCompleted === true,
 };
-const idLength = 3;
 
 const todoManager = {
 
-	getListTodo: ({ state: { todo, todos }}) => (todo !== ''
+	getListTodo: ({ state: { todo, todos },
+		config: { idLength }}) => (todo !== ''
 		? [...todos,
 			{ id: rndString(idLength), todo: todo, isCompleted: false }]
 		: todos),

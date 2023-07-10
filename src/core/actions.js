@@ -44,6 +44,10 @@ const actions = {
 		tasks: taskManager.getTasks(context),
 	}),
 
+	setRemoveTask: (context) => ({
+		tasks: taskManager.removeTask(context),
+	}),
+
 };
 
 export default actions;
