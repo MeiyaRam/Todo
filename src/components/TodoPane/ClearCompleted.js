@@ -3,12 +3,13 @@ import todoManager from '../../services/todoManager';
 
 const ClearCompleted = (context) => {
 	const { actions } = context;
+	const hasCompleted = todoManager.hasCompleted(context);
 
 	return (
-		<div>
+		hasCompleted
+		|| <div>
 			<button
 				onClick={ () => actions.setClearCompleted(context) }
-				disabled={ todoManager.hasCompleted(context) }
 			>
 				Clear Completed
 			</button>
