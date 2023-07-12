@@ -4,10 +4,13 @@ import AddButton from './AddButton';
 import EditButton from './EditButton';
 
 const getEnterKeyAction = (context) => {
-	const { data, config: { keyCode }, actions } = context;
+	const { data, config: { enterKeyCode, escKeyCode }, actions } = context;
 
-	(data.keyCode === keyCode)
+	(data.keyCode === enterKeyCode)
 	&& actions.setAddTodo(data.target.value);
+
+	(data.keyCode === escKeyCode)
+	&& actions.setClearInput(context);
 };
 
 const Input = (context) => {

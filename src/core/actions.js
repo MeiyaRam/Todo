@@ -53,6 +53,10 @@ const actions = {
 		todos: todoManager.getListTodo(context),
 	}),
 
+	setClearInput: (context) => ({
+		todo: context.seed.todo,
+	}),
+
 };
 
 export default actions;
