@@ -4,8 +4,6 @@ const config = {
 	taskLength: 5,
 	taskLimit: 5,
 	intervalValue: 2000,
-	enterKeyCode: 13,
-	escKeyCode: 27,
 };
 
 export default config;

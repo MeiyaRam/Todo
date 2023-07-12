@@ -3,14 +3,9 @@ import ToggleAll from './ToggleAll';
 import AddButton from './AddButton';
 import EditButton from './EditButton';
 
-const getEnterKeyAction = (context) => {
-	const { data, config: { enterKeyCode, escKeyCode }, actions } = context;
-
-	(data.keyCode === enterKeyCode)
-	&& actions.setAddTodo(data.target.value);
-
-	(data.keyCode === escKeyCode)
-	&& actions.setClearInput(context);
+const keyActions = {
+	Enter: (context, data) => context.actions.setAddTodo(data.target.value),
+	Escape: (context) => context.actions.setClearInput(context),
 };
 
 const Input = (context) => {
@@ -23,7 +18,8 @@ const Input = (context) => {
 				type="text"
 				value={ todo }
 				onChange={ (e) => actions.setTodo(e.target.value) }
-				onKeyUp={ (e) => getEnterKeyAction({ ...context, data: e }) }
+				onKeyUp={ (e) => keyActions[e.key]
+					&& keyActions[e.key](context, e) }
 			/>
 			{editTodo
 				? <EditButton { ...context }/>
