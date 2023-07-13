@@ -1,6 +1,7 @@
 lockfileVersion: 5.4
 
 specifiers:
+  '@faker-js/faker': ^8.0.2
   '@laufire/resist': ^0.0.5
   '@laufire/utils': ^2.9.2
   '@testing-library/jest-dom': ^5.14.1
@@ -24,6 +25,7 @@ dependencies:
   web-vitals: 1.1.2
 
 devDependencies:
+  '@faker-js/faker': 8.0.2
   '@testing-library/jest-dom': 5.14.1
   '@testing-library/react': 11.2.7_sfoxds7t5ydpegc3knd667wn6m
   '@testing-library/user-event': 12.8.3
@@ -2452,6 +2454,11 @@ packages:
   /@eslint/js/8.41.0:
     resolution: {integrity: sha512-LxcyMGxwmTh2lY9FwHPGWOHmYFCZvbrFCBZL4FzSSsxsRPuhrYUg/49/0KDfW8tnIEaEHtfmn6+NPN+1DqaNmA==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
+
+  /@faker-js/faker/8.0.2:
+    resolution: {integrity: sha512-Uo3pGspElQW91PCvKSIAXoEgAUlRnH29sX2/p89kg7sP1m2PzCufHINd0FhTXQf6DYGiUlVncdSPa2F9wxed2A==}
+    engines: {node: ^14.17.0 || ^16.13.0 || >=18.0.0, npm: '>=6.14.13'}
+    dev: true
 
   /@humanwhocodes/config-array/0.11.8:
     resolution: {integrity: sha512-UybHIJzJnR5Qc/MsD9Kr+RpO2h+/P1GhOwdiLPXK5TWk5sgTdu88bTD9UP+CKbPPh5Rni1u0GjAdYQLemG8g+g==}
