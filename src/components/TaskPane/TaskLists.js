@@ -9,16 +9,16 @@ const TaskLists = (context) => {
 		ticker(context), []);
 
 	return <div>
-		{tasks.map((task, key) =>
+		{tasks.map(({ task, id }, key) =>
 			<p key={ key }>
 				<button
-					style={ { margin: '3px' } }
-					onClick={ () => actions.setAddTask(task.task) }
+					className="taskButton"
+					onClick={ () => actions.setToTaskTodo(task) }
 				>+</button>
-				{task.task}
+				{task}
 				<button
-					style={ { margin: '3px' } }
-					onClick={ () => actions.setRemoveTask(task.id) }
+					className="taskButton"
+					onClick={ () => actions.setRemoveTask(id) }
 				>X
 				</button>
 			</p>)}

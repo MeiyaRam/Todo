@@ -3,7 +3,7 @@ import TaskLists from './TaskLists';
 
 const TaskPane = (context) =>
 	<div>
-		TaskPane
+		<h1>TaskPane</h1>
 		<TaskLists { ...context }/>
 	</div>;
 

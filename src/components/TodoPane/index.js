@@ -1,12 +1,12 @@
 import { React } from 'react';
-import Input from './Input';
 import Todos from './Todos';
 import FilterBar from './FilterBar';
 import ClearCompleted from './ClearCompleted';
+import UserInput from './UserInput';
 
 const TodoPane = (context) => <div>
-	ToDo App
-	<Input { ...context }/>
+	<h1>ToDo App</h1>
+	<UserInput { ...context }/>
 	<FilterBar { ...context }/>
 	<Todos { ...context }/>
 	<ClearCompleted { ...context }/>
