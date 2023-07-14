@@ -8,7 +8,7 @@ const filters = {
 
 const todoManager = {
 
-	getListTodo: ({ data, state: { todos },
+	getTodoList: ({ data, state: { todos },
 		config: { idLength }}) => (data !== ''
 		? [...todos,
 			{ id: rndString(idLength), todo: data, isCompleted: false }]
@@ -43,7 +43,7 @@ const todoManager = {
 	hasActiveTodo: ({ state: { todos }}) =>
 		todos.filter(filters.Active).length === 0,
 
-	getEditListTodo: ({ state }) =>
+	getEditTodoList: ({ state }) =>
 		state.todos.map((todo) =>
 			(todo.id === state.editTodo.id
 				? { ...todo, todo: state.todo }

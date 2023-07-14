@@ -3,7 +3,7 @@ import { faker } from '@faker-js/faker';
 
 const taskManager = {
 
-	getTasks: ({ state: { tasks },
+	addTasks: ({ state: { tasks },
 		config: { idLength, taskLimit }}) =>
 		(tasks.length !== taskLimit
 			? [...tasks,

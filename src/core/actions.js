@@ -6,7 +6,7 @@ const actions = {
 
 	setAddTodo: (context) => ({
 		todos:
-		todoManager.getListTodo({ ...context, data: context.state.todo }),
+		todoManager.getTodoList({ ...context, data: context.state.todo }),
 		todo: context.seed.todo,
 	}),
 
@@ -36,21 +36,21 @@ const actions = {
 	}),
 
 	setUpdateTodo: (context) => ({
-		todos: todoManager.getEditListTodo(context),
+		todos: todoManager.getEditTodoList(context),
 		todo: context.seed.todo,
 		editTodo: context.seed.editTodo,
 	}),
 
 	setTasks: (context) => ({
-		tasks: taskManager.getTasks(context),
+		tasks: taskManager.addTasks(context),
 	}),
 
 	setRemoveTask: (context) => ({
 		tasks: taskManager.removeTask(context),
 	}),
 
-	setAddTask: (context) => ({
-		todos: todoManager.getListTodo(context),
+	setToTaskTodo: (context) => ({
+		todos: todoManager.getTodoList(context),
 	}),
 
 	setClearInput: (context) => ({
