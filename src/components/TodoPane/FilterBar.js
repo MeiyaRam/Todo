@@ -1,5 +1,5 @@
 import { React } from 'react';
-import FilterButton from './FilterButtons';
+import FilterButton from './FilterButton';
 import todoManager from '../../services/todoManager';
 
 const FilterBar = (context) => {

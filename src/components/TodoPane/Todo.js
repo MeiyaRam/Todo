@@ -1,5 +1,5 @@
 import { React } from 'react';
-import Checkbox from './CheckBox';
+import Checkbox from './Checkbox';
 
 const Todo = (context) => {
 	const { data, actions } = context;
