@@ -1,16 +1,16 @@
 import { React } from 'react';
 
-const CheckBox = (context) => {
+const Checkbox = (context) => {
 	const { actions, data } = context;
 	const { isCompleted } = data;
 
 	return (
 		<input
-			type="checkBox"
+			type="Checkbox"
 			checked={ isCompleted }
 			onChange={ () => actions.setToggle(data) }
 		/>
 	);
 };
 
-export default CheckBox;
+export default Checkbox;

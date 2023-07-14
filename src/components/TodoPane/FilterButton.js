@@ -1,6 +1,6 @@
 import { React } from 'react';
 
-const FilterButtons = (context) => {
+const FilterButton = (context) => {
 	const { actions, data } = context;
 
 	return (
@@ -16,4 +16,4 @@ const FilterButtons = (context) => {
 	);
 };
 
-export default FilterButtons;
+export default FilterButton;

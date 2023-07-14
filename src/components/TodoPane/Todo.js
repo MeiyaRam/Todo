@@ -1,5 +1,5 @@
 import { React } from 'react';
-import CheckBox from './CheckBox';
+import Checkbox from './CheckBox';
 
 const Todo = (context) => {
 	const { data, actions } = context;
@@ -7,7 +7,7 @@ const Todo = (context) => {
 
 	return <tr key={ id }>
 		<td>
-			<CheckBox { ...{ ...context } }/>
+			<Checkbox { ...context }/>
 		</td>
 		<td
 			onClick={ () => actions.setEditTodo(data) }

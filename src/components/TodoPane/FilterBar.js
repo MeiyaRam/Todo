@@ -1,5 +1,5 @@
 import { React } from 'react';
-import FilterButtons from './FilterButtons';
+import FilterButton from './FilterButtons';
 import todoManager from '../../services/todoManager';
 
 const FilterBar = (context) => {
@@ -12,7 +12,7 @@ const FilterBar = (context) => {
 			<tbody>
 				<tr>
 					{filterButtons.map((button, key) =>
-						<FilterButtons
+						<FilterButton
 							key={ key }
 							{ ...{ ...context, data: button } }
 						/>)}
